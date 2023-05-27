@@ -1,3 +1,4 @@
+import multiprocessing as mp
 import logging
 import argparse
 import json
@@ -7,28 +8,29 @@ logger = logging.getLogger()
 logger.setLevel('INFO')
 
 
-SETTINGS_FILE = 'files/settings.json'
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-b', '--base_path', default='files\\base.json',
+    parser.add_argument('-d', '--data_path', default='files\\base.json',
                         help='Путь к json файлу с данными', action='store')
     group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument(
+        '-f', '--find', help='Поиск номеров карт с заданным хэшем', action='store_true')
+    group.add_argument(
+        '-c', '--check', help='Проверяет карту на достоверность', action='store_true')
+    group.add_argument(
+        '-s', '--statistic', help='Вывод зависимости времени выполненя от кол-ва потоков', action='store_true')
     group.add_argument()
     args = parser.parse_args()
-    base_path = args.base_path
+    data_path = args.data_path
     try:
-        with open(base_path) as jf:
-            init = json.load(jf)
+        with open(data_path) as jf:
+            data = json.load(jf)
     except FileNotFoundError:
-        logging.error(f"{base_path} not found")
+        logging.error(f"{data_path} not found")
 
-    match mode:
-        case ():
-            pass
-        case ():
-            pass
-        case ():
-            pass
-        case:
-            pass
+    if args.find:
+        pass
+    elif args.cheak:
+        pass
+    elif args.statistic:
+        pass
