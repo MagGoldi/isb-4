@@ -29,8 +29,16 @@ if __name__ == '__main__':
         logging.error(f"{data_path} not found")
 
     if args.find:
-        pass
+        logging.info('Search for the card number...\n')
+
+        logging.info('Card number search completed')
     elif args.cheak:
-        pass
+        logging.info('Checking the correctness of the card...')
+
+        logging.info('Verification of the cards correctness is completed')
     elif args.statistic:
-        pass
+        logging.info('Data collection...\n')
+
+        logging.info('Вata collection completed\n')
+    else:
+        logging.error("is something wrong")
