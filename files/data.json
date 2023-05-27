@@ -17,6 +17,6 @@
     ],
     "last_digits": "5623",
     "found_card": "files\\found_card.json",
-    "statistic_path": "files\\depending_time_on_the_processes.png",
-    "processes_amount": "6"
+    "statistic_path": "files\\stats.png",
+    "processes_amount": "5"
 }
